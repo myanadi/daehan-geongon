@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대한건곤공사 (大韓乾坤公社) | DAEHAN GEONGON PUBLIC CORPORATION</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+/* =========================================================
+   DAEHAN GEONGON PUBLIC CORPORATION — intranet/IR theme
+   화이트+그레이 베이스 / 딥네이비 포인트 / 관공서 건조함
+   ========================================================= */
+:root{
+  --bg:#ffffff;
+  --bg-alt:#f4f5f7;
+  --bg-alt2:#eceef1;
+  --ink:#1b1e25;
+  --ink-soft:#5b616e;
+  --ink-faint:#9aa0ab;
+  --line:#e1e4ea;
+  --line-strong:#c9ced7;
+  --navy:#15294e;
+  --navy-soft:#2c477a;
+  --navy-tint:#eef1f6;
+  --warn:#8f2d44;
+  --warn-tint:#f6edf0;
+  --radius:3px;
+  --maxw:1120px;
+  --mono:'Pretendard',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:-0.01em;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+
+/* label kicker */
+.kicker{
+  font-size:11px;font-weight:700;letter-spacing:.22em;
+  color:var(--navy-soft);text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.kicker::before{content:"";width:22px;height:1px;background:var(--navy-soft)}
+h2.sec-title{
+  font-size:30px;font-weight:800;letter-spacing:-0.03em;
+  color:var(--ink);margin-bottom:8px;line-height:1.25;
+}
+.sec-sub{font-size:14px;color:var(--ink-soft);margin-bottom:42px}
+
+/* ===== HEADER ===== */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:var(--maxw);margin:0 auto;padding:0 28px;
+  height:62px;display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
+.brand .seal{
+  font-size:16px;color:#fff;background:var(--navy);
+  width:30px;height:30px;display:grid;place-items:center;
+  border-radius:var(--radius);letter-spacing:-2px;font-weight:700;
+  padding-right:2px;
+}
+.brand .ko{font-size:16px}
+.brand .en{font-size:9.5px;color:var(--ink-faint);letter-spacing:.18em;font-weight:600;display:block;margin-top:-3px}
+.menu{display:flex;gap:4px;list-style:none}
+.menu a{
+  text-decoration:none;color:var(--ink-soft);font-size:13.5px;font-weight:600;
+  padding:8px 14px;border-radius:var(--radius);transition:.15s;
+}
+.menu a:hover{color:var(--navy);background:var(--navy-tint)}
+.nav-status{font-size:10.5px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.04em}
+.nav-status b{color:var(--warn);font-weight:700}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:var(--radius);font-size:18px;padding:4px 10px;cursor:pointer;color:var(--ink)}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;min-height:84vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:flex-start;border-top:none;overflow:hidden;
+  background:
+    linear-gradient(180deg,#fff 0%,#fbfbfc 60%,#f4f5f7 100%);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(circle at 30% 40%,#000 0%,transparent 70%);
+          mask-image:radial-gradient(circle at 30% 40%,#000 0%,transparent 70%);
+  opacity:.5;
+}
+.hero-watermark{
+  position:absolute;right:-2%;top:50%;transform:translateY(-50%);
+  font-size:32vw;font-weight:800;color:var(--ink);opacity:.028;
+  letter-spacing:-.05em;line-height:.8;pointer-events:none;user-select:none;
+}
+.hero .wrap{position:relative;width:100%}
+.hero-tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:.24em;font-weight:700;
+  color:var(--navy-soft);margin-bottom:24px;opacity:0;animation:rise .7s .1s forwards;
+}
+.hero h1{
+  font-size:clamp(34px,6vw,64px);font-weight:800;letter-spacing:-.04em;
+  line-height:1.12;color:var(--ink);margin-bottom:22px;
+  opacity:0;animation:rise .7s .25s forwards;
+}
+.hero h1 .accent{color:var(--navy)}
+.hero-en{
+  font-family:var(--mono);font-size:12px;letter-spacing:.3em;font-weight:600;
+  color:var(--ink-faint);text-transform:uppercase;
+  opacity:0;animation:rise .7s .4s forwards;
+}
+.hero-meta{
+  margin-top:46px;display:flex;gap:34px;flex-wrap:wrap;
+  opacity:0;animation:rise .7s .55s forwards;
+}
+.hero-meta div{border-left:2px solid var(--navy);padding-left:13px}
+.hero-meta .k{font-size:10px;letter-spacing:.14em;color:var(--ink-faint);font-weight:700;text-transform:uppercase}
+.hero-meta .v{font-size:14px;font-weight:700;color:var(--ink)}
+.scroll-ind{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--ink-faint);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.scroll-ind::after{content:"";width:1px;height:30px;background:var(--line-strong);animation:scrolly 1.8s infinite}
+@keyframes scrolly{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.hero-tag,.hero h1,.hero-en,.hero-meta{transform:translateY(16px)}
+
+/* ===== ABOUT ===== */
+.ceo-card{
+  border:1px solid var(--line);border-left:3px solid var(--navy);
+  border-radius:var(--radius);padding:34px 38px;background:var(--bg-alt);
+  margin-bottom:34px;position:relative;
+}
+.ceo-card .quote-mark{position:absolute;top:14px;right:26px;font-size:54px;color:var(--line-strong);font-weight:800;line-height:1}
+.ceo-card p{font-size:15px;color:var(--ink);margin-bottom:14px;max-width:760px}
+.ceo-card p:last-of-type{margin-bottom:0}
+.ceo-sign{margin-top:26px;padding-top:20px;border-top:1px solid var(--line-strong);font-size:13px;color:var(--ink-soft)}
+.ceo-sign b{color:var(--ink);font-size:15px;font-weight:800}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:26px}
+.found-box{border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
+.found-box h3{font-size:15px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.found-box h3 .hz{font-size:11px;color:var(--navy-soft);font-weight:700;font-family:var(--mono)}
+.found-box p{font-size:13.5px;color:var(--ink-soft)}
+.found-box .tagline{margin-top:16px;font-size:12.5px;color:var(--navy);font-weight:700;font-style:italic}
+table.profile{width:100%;border-collapse:collapse;font-size:13.5px}
+table.profile th,table.profile td{text-align:left;padding:11px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+table.profile th{width:84px;color:var(--ink-faint);font-weight:700;font-size:11px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+table.profile td{color:var(--ink);font-weight:500}
+table.profile tr:last-child th,table.profile tr:last-child td{border-bottom:none}
+
+/* ===== ORG CHART ===== */
+.org-desc{font-size:14px;color:var(--ink-soft);max-width:780px;margin-bottom:44px;border-left:2px solid var(--line-strong);padding-left:16px}
+.org-tier-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink-faint);text-transform:uppercase;font-weight:700;margin-bottom:12px;text-align:center}
+.connector{width:1px;height:30px;background:var(--line-strong);margin:0 auto}
+
+/* node generic */
+.node{
+  border:1px solid var(--line-strong);border-radius:var(--radius);background:#fff;
+  cursor:pointer;transition:.18s;text-align:center;
+}
+.node:hover{border-color:var(--navy);box-shadow:0 2px 0 var(--navy)}
+.node.open{border-color:var(--navy)}
+
+/* board */
+.org-board{max-width:520px;margin:0 auto;padding:18px 22px}
+.org-board .nt{font-size:15px;font-weight:800}
+.org-board .ns{font-size:11px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.06em;margin-top:2px}
+.gods{margin:14px auto 0;max-width:880px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;overflow:hidden;max-height:0;transition:max-height .4s ease,margin .4s,opacity .3s;opacity:0}
+.gods.show{max-height:760px;opacity:1;margin-top:18px}
+.god{border:1px solid var(--line);border-radius:var(--radius);padding:15px 13px;background:var(--bg-alt);text-align:left}
+.god h4{font-size:13.5px;font-weight:800;margin-bottom:3px}
+.god .role{font-size:10.5px;color:var(--navy-soft);font-weight:700;margin-bottom:9px;font-family:var(--mono);letter-spacing:.02em;line-height:1.4}
+.god p{font-size:11.5px;color:var(--ink-soft);line-height:1.5}
+.god .tags{margin-top:9px;font-size:9.5px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.02em}
+
+/* ceo */
+.org-ceo{max-width:420px;margin:0 auto;padding:16px 22px}
+.org-ceo .nt{font-size:15px;font-weight:800}
+.org-ceo .nt .hz{font-size:11px;color:var(--ink-faint);font-weight:600;font-family:var(--mono)}
+.org-ceo .ns{font-size:11px;color:var(--navy-soft);font-family:var(--mono);margin-top:2px;font-weight:700}
+.ceo-detail{max-width:640px;margin:0 auto;max-height:0;overflow:hidden;transition:max-height .4s ease,margin .4s,opacity .3s;opacity:0}
+.ceo-detail.show{max-height:340px;opacity:1;margin-top:14px}
+.ceo-detail .inner{border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:var(--radius);padding:20px 24px;background:var(--bg-alt);text-align:left}
+.ceo-detail p{font-size:12.5px;color:var(--ink-soft);margin-bottom:9px}
+.ceo-detail .tags{font-size:10px;color:var(--ink-faint);font-family:var(--mono)}
+
+/* divisions row */
+.div-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start}
+.div-col{display:flex;flex-direction:column;gap:0}
+.div-head{padding:16px 12px}
+.div-head .ic{font-size:17px;margin-bottom:7px;display:block}
+.div-head .nt{font-size:13.5px;font-weight:800;line-height:1.3}
+.div-head .lead{font-size:10.5px;color:var(--navy-soft);font-weight:700;margin-top:5px;font-family:var(--mono)}
+.div-head .lead .ko{font-family:'Pretendard';font-size:11px}
+.div-detail{max-height:0;overflow:hidden;transition:max-height .4s ease,margin .35s,opacity .3s;opacity:0}
+.div-detail.show{max-height:600px;opacity:1;margin-top:8px}
+.div-detail .inner{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:var(--bg-alt);text-align:left}
+.div-detail h4{font-size:12.5px;font-weight:800;margin-bottom:2px}
+.div-detail .role{font-size:10px;color:var(--navy-soft);font-weight:700;font-family:var(--mono);margin-bottom:8px}
+.div-detail p{font-size:11px;color:var(--ink-soft);line-height:1.55;margin-bottom:9px}
+.div-detail .tags{font-size:9px;color:var(--ink-faint);font-family:var(--mono);margin-bottom:11px;line-height:1.5}
+.div-detail .work-label{font-size:9px;letter-spacing:.14em;color:var(--ink-faint);font-weight:700;text-transform:uppercase;margin-bottom:6px}
+.div-detail ul{list-style:none}
+.div-detail ul li{font-size:10.5px;color:var(--ink);padding:4px 0 4px 13px;position:relative;border-bottom:1px solid var(--line)}
+.div-detail ul li:last-child{border-bottom:none}
+.div-detail ul li::before{content:"";position:absolute;left:0;top:11px;width:4px;height:4px;background:var(--navy-soft)}
+
+/* sunbae bar */
+.sunbae-bar{
+  margin-top:8px;border:1px dashed var(--line-strong);border-radius:var(--radius);
+  padding:9px 12px;background:#fff;cursor:pointer;transition:.15s;
+  font-size:10.5px;color:var(--ink-soft);display:flex;align-items:center;justify-content:space-between;gap:6px;
+}
+.sunbae-bar:hover{border-color:var(--navy-soft);color:var(--navy)}
+.sunbae-bar .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--ink-faint);font-weight:700}
+.sunbae-bar .nm{font-weight:800;color:var(--ink)}
+.sunbae-bar .chev{transition:.25s;font-size:9px;color:var(--ink-faint)}
+.sunbae-bar.open .chev{transform:rotate(180deg)}
+.sunbae-detail{max-height:0;overflow:hidden;transition:max-height .35s ease,margin .3s,opacity .3s;opacity:0}
+.sunbae-detail.show{max-height:300px;opacity:1;margin-top:6px}
+.sunbae-detail .inner{border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;background:var(--navy-tint);text-align:left}
+.sunbae-detail h5{font-size:11.5px;font-weight:800;margin-bottom:2px}
+.sunbae-detail .role{font-size:9.5px;color:var(--navy-soft);font-weight:700;font-family:var(--mono);margin-bottom:7px}
+.sunbae-detail p{font-size:10.5px;color:var(--ink-soft);line-height:1.55;margin-bottom:7px}
+.sunbae-detail .tags{font-size:9px;color:var(--ink-faint);font-family:var(--mono)}
+
+/* general affairs + 4F */
+.org-ga{margin-top:34px;display:grid;grid-template-columns:1fr 200px;gap:14px;align-items:stretch}
+.ga-box{border:1px solid var(--line-strong);border-radius:var(--radius);padding:18px 22px;background:var(--bg-alt)}
+.ga-box .nt{font-size:14px;font-weight:800;margin-bottom:4px}
+.ga-box p{font-size:11.5px;color:var(--ink-soft)}
+.floor4{
+  border:1px solid var(--warn);border-radius:var(--radius);padding:18px;
+  background:var(--warn-tint);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;cursor:not-allowed;position:relative;
+}
+.floor4 .lock{font-size:18px;margin-bottom:6px}
+.floor4 .nt{font-size:13px;font-weight:800;color:var(--warn)}
+.floor4 .ns{font-size:9.5px;color:var(--warn);font-family:var(--mono);margin-top:4px;letter-spacing:.04em;opacity:.8}
+
+/* samun */
+.samun-wrap{margin-top:46px;border-top:1px solid var(--line);padding-top:34px}
+.samun-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.samun-head .hz{font-size:20px;font-weight:800;color:var(--warn);letter-spacing:-.02em}
+.samun-head .en{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink-faint);font-weight:700;text-transform:uppercase}
+.samun-desc{font-size:13px;color:var(--ink-soft);max-width:760px;margin-bottom:22px}
+.samun-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.samun-card{border:1px solid var(--line-strong);border-radius:var(--radius);padding:18px 20px;background:#fff;border-top:3px solid var(--warn)}
+.samun-card h4{font-size:14px;font-weight:800;margin-bottom:2px}
+.samun-card .role{font-size:10.5px;color:var(--warn);font-weight:700;font-family:var(--mono);margin-bottom:9px}
+.samun-card p{font-size:11.5px;color:var(--ink-soft);line-height:1.55;margin-bottom:9px}
+.samun-card .tags{font-size:9.5px;color:var(--ink-faint);font-family:var(--mono);line-height:1.5}
+
+/* ===== HEADQUARTERS ===== */
+.hq-layout{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start}
+.building{border:1px solid var(--line-strong);border-radius:var(--radius);overflow:hidden}
+.floor{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:11px 15px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.14);
+  transition:.15s;position:relative;
+}
+.floor:last-child{border-bottom:none}
+.floor .fl-no{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.02em;opacity:.85;white-space:nowrap}
+.floor .fl-nm{font-size:12px;font-weight:700;text-align:right;flex:1}
+.floor:hover{filter:brightness(1.08)}
+.floor.active{outline:2px solid var(--navy);outline-offset:-2px}
+.floor.f4{cursor:not-allowed}
+.floor.f4:hover{filter:none}
+/* vertical heaven→underworld gradient via inline-ish classes */
+.floor.lv0{background:#1a1d24;color:#e8eaee}   /* B2-3 underworld */
+.floor.lv1{background:#2c3242;color:#dfe2e8}   /* B1 */
+.floor.lv2{background:#444b5d;color:#eceef2}   /* 1F */
+.floor.lv3{background:#5a6275;color:#fff}      /* 2-3 */
+.floor.lv4{background:#7e8696;color:#fff}      /* 4F hidden */
+.floor.lv5{background:#9aa1ae;color:#1b1e25}   /* 5-8 */
+.floor.lv6{background:#b6bcc6;color:#1b1e25}   /* 9-16 */
+.floor.lv7{background:#cdd2da;color:#1b1e25}   /* 17-19 */
+.floor.lv8{background:#e0e3e9;color:#1b1e25}   /* 20-21 */
+.floor.lv9{background:#eef0f3;color:#1b1e25}   /* 22 */
+.floor.lv10{background:#f8f9fb;color:#15294e}  /* 23 heaven */
+.hq-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--ink-faint);margin-top:10px;text-transform:uppercase}
+.hq-panel{border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;min-height:260px;background:var(--bg-alt);position:sticky;top:80px}
+.hq-panel .pno{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--navy-soft);letter-spacing:.08em}
+.hq-panel h3{font-size:22px;font-weight:800;margin:6px 0 4px;letter-spacing:-.02em}
+.hq-panel .zone{font-size:12px;color:var(--navy);font-weight:700;margin-bottom:18px;font-family:var(--mono)}
+.hq-panel p{font-size:13.5px;color:var(--ink-soft);line-height:1.7}
+.hq-panel .hint{margin-top:18px;font-size:11px;color:var(--ink-faint);font-style:italic}
+.hq-panel.locked h3,.hq-panel.locked .zone{color:var(--ink-faint)}
+
+/* ===== RECRUIT / WELFARE ===== */
+.rc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:48px}
+.rc-box{border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+.rc-box .tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--navy-soft);font-weight:700;text-transform:uppercase}
+.rc-box h3{font-size:17px;font-weight:800;margin:8px 0 10px}
+.rc-box p{font-size:13px;color:var(--ink-soft);margin-bottom:14px}
+.ladder{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-family:var(--mono);font-size:11px}
+.ladder .step{background:var(--navy-tint);color:var(--navy);font-weight:700;padding:5px 9px;border-radius:var(--radius);border:1px solid var(--line);text-align:center;line-height:1.35}
+.ladder .step.top{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ladder .arr{color:var(--ink-faint)}
+
+.subhead{font-size:13px;font-weight:800;color:var(--ink);margin:0 0 16px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+.subhead .hz{font-size:11px;color:var(--navy-soft);font-family:var(--mono);font-weight:700}
+.ohaeng{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:48px}
+.oh-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px 14px;text-align:center;transition:.15s}
+.oh-card:hover{border-color:var(--navy);background:var(--navy-tint)}
+.oh-card .el{font-size:22px;font-weight:800;color:var(--navy);font-family:var(--mono)}
+.oh-card .nm{font-size:12.5px;font-weight:800;margin:8px 0 4px}
+.oh-card .ds{font-size:10.5px;color:var(--ink-soft);line-height:1.45}
+.bn-list{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:48px}
+.bn{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:14px 20px;border-bottom:1px solid var(--line);align-items:baseline}
+.bn:last-child{border-bottom:none}
+.bn:nth-child(odd){background:var(--bg-alt)}
+.bn .bn-t{font-size:12.5px;font-weight:800}
+.bn .bn-d{font-size:12px;color:var(--ink-soft)}
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fac{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;transition:.15s}
+.fac:hover{border-color:var(--navy-soft)}
+.fac h4{font-size:13.5px;font-weight:800;margin-bottom:3px;display:flex;align-items:baseline;gap:7px}
+.fac h4 .hz{font-size:10px;color:var(--navy-soft);font-family:var(--mono);font-weight:700}
+.fac .cat{font-size:9.5px;letter-spacing:.1em;color:var(--ink-faint);font-weight:700;text-transform:uppercase;margin-bottom:9px}
+.fac p{font-size:11.5px;color:var(--ink-soft);line-height:1.55}
+
+/* ===== INTRANET BOARD ===== */
+.board-note{font-size:12px;color:var(--ink-faint);font-family:var(--mono);margin-bottom:30px;display:flex;align-items:center;gap:8px}
+.board-note::before{content:"●";color:#3a9d5d;font-size:9px}
+.board-block{margin-bottom:36px}
+.board-block .bh{
+  font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--ink);
+  padding-bottom:10px;border-bottom:2px solid var(--ink);margin-bottom:0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.board-block .bh .cnt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);font-weight:600}
+.post{border-bottom:1px solid var(--line);transition:.12s}
+.post-head{display:flex;align-items:center;gap:12px;padding:13px 6px;cursor:pointer}
+.post-head:hover{background:var(--bg-alt)}
+.post.notice .post-head{cursor:default}
+.post.notice .post-head:hover{background:none}
+.post .ptag{
+  font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.06em;
+  padding:2px 6px;border-radius:2px;white-space:nowrap;border:1px solid var(--line-strong);color:var(--ink-soft);
+}
+.post.notice .ptag{background:var(--navy);color:#fff;border-color:var(--navy)}
+.post.locked .ptag{background:var(--warn-tint);color:var(--warn);border-color:var(--warn)}
+.post .ptitle{flex:1;font-size:13.5px;font-weight:600;color:var(--ink)}
+.post.locked .ptitle{color:var(--warn);display:flex;align-items:center;gap:7px}
+.post .pmeta{font-family:var(--mono);font-size:10px;color:var(--ink-faint);white-space:nowrap}
+.post .pcmt{font-family:var(--mono);font-size:10px;color:var(--navy-soft);font-weight:700;white-space:nowrap}
+.post-body{max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .3s;opacity:0}
+.post-body.show{max-height:1400px;opacity:1}
+.post-body .inner{padding:6px 18px 22px 18px;background:var(--bg-alt)}
+.post-body .ptext{font-size:13px;color:var(--ink);line-height:1.7;padding:14px 0;white-space:pre-line}
+.cmt-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--ink-faint);font-weight:700;text-transform:uppercase;margin:8px 0 6px}
+.cmt{font-size:12px;color:var(--ink-soft);padding:7px 0;border-top:1px solid var(--line);line-height:1.5}
+.cmt .nest{color:var(--ink-faint);margin-right:5px}
+.cmt b{color:var(--ink);font-weight:700}
+.cmt .vt{font-family:var(--mono);font-size:9px;color:var(--ink-faint);margin-left:6px}
+
+/* lock / login */
+.lock-gate{padding:8px 18px 24px}
+.lock-gate .inner{
+  border:1px solid var(--warn);border-radius:var(--radius);background:var(--warn-tint);
+  padding:28px 26px;text-align:center;
+}
+.lock-gate .lk-ic{font-size:24px;margin-bottom:10px}
+.lock-gate .lk-msg{font-size:13px;color:var(--warn);font-weight:700;margin-bottom:4px}
+.lock-gate .lk-sub{font-size:11px;color:var(--ink-soft);margin-bottom:20px;font-family:var(--mono)}
+.lock-form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.lock-form input{
+  font-family:var(--mono);font-size:13px;padding:9px 14px;border:1px solid var(--line-strong);
+  border-radius:var(--radius);width:200px;background:#fff;color:var(--ink);
+}
+.lock-form input:focus{outline:none;border-color:var(--navy)}
+.lock-form button{
+  font-family:'Pretendard';font-size:12.5px;font-weight:700;padding:9px 20px;cursor:pointer;
+  border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:var(--radius);transition:.15s;
+}
+.lock-form button:hover{background:var(--navy-soft)}
+.lock-err{font-size:11px;color:var(--warn);font-family:var(--mono);margin-top:12px;min-height:14px;font-weight:700}
+.unlocked-body{display:none}
+.unlocked-body.show{display:block}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);background:var(--bg-alt);padding:56px 0 48px;text-align:center}
+footer .fseal{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.04em;margin-bottom:12px}
+footer .fmotto{font-size:13px;color:var(--ink);font-weight:700;margin-bottom:6px}
+footer .fnote{font-size:10.5px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.06em}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:880px){
+  .about-grid,.hq-layout,.rc-grid,.org-ga{grid-template-columns:1fr}
+  .div-row{grid-template-columns:repeat(2,1fr)}
+  .gods{grid-template-columns:repeat(2,1fr)}.gods.show{max-height:1600px}
+  .ohaeng{grid-template-columns:repeat(2,1fr)}
+  .fac-grid,.samun-row{grid-template-columns:1fr}
+  .hq-panel{position:static}
+  .menu{display:none}
+  .burger{display:block}
+  .nav-status{display:none}
+  .hero-watermark{font-size:60vw}
+  .bn{grid-template-columns:1fr;gap:2px}
+}
+@media(max-width:520px){
+  .div-row{grid-template-columns:1fr}
+}
+.menu.mobile-open{
+  display:flex;position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;
+  background:#fff;border-bottom:1px solid var(--line);padding:8px 16px 14px;
+}
+.menu.mobile-open a{padding:11px 8px;border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <nav class="nav">
+    <a href="#home" class="brand" style="text-decoration:none;color:inherit">
+      <span class="seal">乾坤</span>
+      <span><span class="ko">대한건곤공사</span><span class="en">DAEHAN GEONGON PUBLIC CORP.</span></span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#about">공사 소개</a></li>
+      <li><a href="#org">조직도</a></li>
+      <li><a href="#hq">사옥 안내</a></li>
+      <li><a href="#welfare">인재·복지</a></li>
+      <li><a href="#board">사내게시판</a></li>
+    </ul>
+    <span class="nav-status">결계 상태 <b>안정</b> · 접속 외부망</span>
+    <button class="burger" id="burger" aria-label="메뉴">☰</button>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero" id="home">
+  <div class="hero-watermark">乾坤</div>
+  <div class="wrap">
+    <div class="hero-tag">DAEHAN GEONGON PUBLIC CORPORATION · 神人協約 인가 특수공사</div>
+    <h1>대한민국의 내일을 지킵니다,<br><span class="accent">대한건곤공사</span></h1>
+    <div class="hero-en">BALANCE, MANAGED IN THE UNSEEN</div>
+    <div class="hero-meta">
+      <div><div class="k">설립근거</div><div class="v">神人協約</div></div>
+      <div><div class="k">사업영역</div><div class="v">균형 인프라 독점운영</div></div>
+      <div><div class="k">본부</div><div class="v">4개 특수목적본부 + 1개 공통관리본부</div></div>
+    </div>
+  </div>
+  <div class="scroll-ind">SCROLL</div>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">About · 공사 소개</div>
+    <h2 class="sec-title">대한건곤공사를 소개합니다</h2>
+    <p class="sec-sub">세상의 이치를 바르게, 국민의 내일을 안전하게. 대한건곤공사</p>
+
+    <div class="ceo-card">
+      <span class="quote-mark">”</span>
+      <p>대한건곤공사 홈페이지를 찾아주신 여러분을 환영합니다.</p>
+      <p>태초 이래, 보이지 않는 곳에는 언제나 균형이 있었습니다. 신계와 인간계 사이의 질서, 그리고 그 사이를 살아가는 모든 존재의 안녕 — 대한건곤공사는 神人協約(신인협약)의 정신을 받들어 그 균형을 묵묵히 책임져 왔습니다.</p>
+      <p>저희는 한 분 한 분의 인재가 곧 공사의 미래라는 믿음으로, 임직원이 자긍심을 갖고 일할 수 있는 환경을 만들기 위해 최선을 다하고 있습니다.</p>
+      <p>앞으로도 대한건곤공사는 신뢰받는 균형의 동반자로서, 보이지 않는 곳에서 제 역할을 다하겠습니다.</p>
+      <div class="ceo-sign">대표이사 사장 &nbsp;<b>權武進</b> &nbsp;권무진</div>
+    </div>
+
+    <div class="about-grid">
+      <div class="found-box">
+        <h3>설립 근거 <span class="hz">神人協約</span></h3>
+        <p>대한건곤공사는 신계와 인간계 간 체결된 법적 권한인 神人協約(신인협약)에 의거하여 설립된 특수공사입니다. 한반도 전역의 특수 안전 인프라 — 국가 결계망 유지보수, 영혼 자원 행정 처리, 비인가 개체 통제, 특수 의약품 생산 및 민간 사회 대상 보안 유지 — 에 대한 독점적 운영 및 집행권을 인가받았습니다.</p>
+        <p style="margin-top:12px">본 공사는 지정 인가 교육기관의 특수 전공자를 대상으로 매년 추분기 실시되는 '심도식(審度式)' 역량 등급에 의거하여 정기 사원 발령을 시행하고 있습니다. 이를 통해 고위험 직무 능력에 대한 지속적인 관리·통제 체계를 유지하며, 국가 안전 보장과 사회 환원의 책임을 다하고 있습니다.</p>
+        <div class="tagline">— 흔들림 없는 세상의 기반, 대한건곤공사가 세웁니다.</div>
+      </div>
+      <div class="found-box">
+        <h3>공사 개요 <span class="hz">CORP. PROFILE</span></h3>
+        <table class="profile">
+          <tr><th>공사명</th><td>대한건곤공사 (大韓乾坤公社) · Daehan Geongon Public Corp.</td></tr>
+          <tr><th>설립근거</th><td>神人協約 (신인협약)</td></tr>
+          <tr><th>유형</th><td>특수공사 · 국가 특수 인프라 통합 구축 및 독점 운영</td></tr>
+          <tr><th>사훈</th><td>보이지 않는 균형, 건곤이 맡습니다</td></tr>
+          <tr><th>이사회</th><td>옥황상제 · 염라대왕 · 성주신 · 자미대제 + 마고(명예이사)</td></tr>
+          <tr><th>대표이사</th><td>권무진 (權武進)</td></tr>
+          <tr><th>본부</th><td>명부집행 · 운상 · 가람 · 관성 + 공통관리</td></tr>
+          <tr><th>제휴기관</th><td>계룡 은비고 · 지리산 천왕고 · 한라산 백록고</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ORG CHART ===================== -->
+<section id="org">
+  <div class="wrap">
+    <div class="kicker">Organization · 조직도</div>
+    <h2 class="sec-title">조직 체계 및 인사 운영 안내</h2>
+    <p class="sec-sub">노드를 클릭하면 상세 정보가 펼쳐집니다.</p>
+
+    <p class="org-desc">대한건곤공사는 초국가적 거버넌스를 지탱하는 '신격 이사회'의 결정을 최고 존엄으로 하되, 인간 출신 전문경영인(대표이사)의 책임 경영 아래 실무를 총괄하는 이원화된 지배구조를 갖추고 있습니다.<br><br>공사 산하의 4대 특수목적본부는 각 오너 신격의 소관 직무에 따라 독립적으로 운영되며, 신규 채용 인력은 인가 교육기관에서의 전문 전공 분야 및 '심도식' 면허 등급에 의거하여 해당 부서로 의무 발령됩니다. 모든 임직원은 철저한 원칙주의와 상명하복의 결재 라인 속에서 공사 시스템을 지탱하는 전문 인력으로 커리어를 시작하게 됩니다.</p>
+
+    <!-- BOARD -->
+    <div class="org-tier-label">이사회 · The Board (神)</div>
+    <div class="node org-board" onclick="toggleBoard(this)">
+      <div class="nt">이사회 (神)</div>
+      <div class="ns">OWNERS · 건들 수 없는 윗선 — 클릭하여 보기</div>
+    </div>
+    <div class="gods" id="gods">
+      <div class="god"><h4>옥황상제</h4><div class="role">운상본부 오너 · 사실상 회장</div><p>격(格)과 의전에 집착하는 관료의 정점. CEO를 "유능한 신하"로 본다.</p><div class="tags">#회장격 #의전 #관료주의</div></div>
+      <div class="god"><h4>염라대왕</h4><div class="role">명부본부 오너</div><p>결과와 질서만 본다. 가장 무서운 이사. 인간을 처리할 '사건'으로 취급.</p><div class="tags">#원칙 #냉혹 #최강압박</div></div>
+      <div class="god"><h4>성주신</h4><div class="role">가람본부 오너</div><p>인간과 가장 가까운 신. 직원을 그나마 아끼지만 지독히 보수적인 가장(家長).</p><div class="tags">#인간친화 #보수적 #정많음</div></div>
+      <div class="god"><h4>자미대제</h4><div class="role">관성본부 오너 · 운명의 신</div><p>모든 별과 운명을 읽는다. CEO를 "안 놓아주는" 이유가 이쪽 — 운명이 그를 묶어뒀다고 한다.</p><div class="tags">#운명 #북극성</div></div>
+      <div class="god"><h4>마고</h4><div class="role">명예이사 · 비상임</div><p>본업은 계룡 은비고등학교 교장직. 공사의 비상임 명예이사를 겸임하고 있다. 학교와 공사를 잇는 산학연계의 다리. 경영 일선에는 참여하지 않지만 인재추천에 큰 영향력을 행사.</p><div class="tags">#다리역할 #경영불참</div></div>
+    </div>
+
+    <div class="connector"></div>
+
+    <!-- CEO -->
+    <div class="org-tier-label">대표이사 · CEO</div>
+    <div class="node org-ceo" onclick="toggleCeo(this)">
+      <div class="nt">권무진 <span class="hz">權武進</span></div>
+      <div class="ns">대표이사 사장 · 전문경영인 — 클릭하여 보기</div>
+    </div>
+    <div class="ceo-detail" id="ceoDetail">
+      <div class="inner">
+        <p>인간 능력자 출신. 라이선스 바닥 등급에서 근성으로 기어 올라온 자수성가. 일을 너무 잘해서 신들이 끌어다 앉혔다.</p>
+        <p>상층 신격의 압박과 보수적인 사내 문화로 인한 만성 번아웃 상태. 상시 탈출 및 퇴사 기회를 모색 중인 환멸형 인재. 젊어서 퇴직까진 까마득해 더 미치는 중.</p>
+        <div class="tags">#자수성가 #전문경영인 #번아웃 #환멸형 #신들이안놓아줌 #일하기싫어</div>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <!-- DIVISIONS -->
+    <div class="org-tier-label">4본부 · Divisions</div>
+    <div class="div-row">
+
+      <!-- 명부 -->
+      <div class="div-col">
+        <div class="node div-head" onclick="toggleDiv(this,'d1')">
+          <span class="ic">⚖</span>
+          <div class="nt">명부집행본부</div>
+          <div class="lead">本部長 · <span class="ko">염도진</span></div>
+        </div>
+        <div class="div-detail" id="d1">
+          <div class="inner">
+            <h4>염도진 — FM 집행관</h4>
+            <div class="role">DIVISION HEAD · 명부집행본부장</div>
+            <p>성 '염'은 염라의 동음. 제 오너 신을 빼닮은 강직함. 업보엔 예외 없고, 사문이든 동료든 법대로 친다. 가장 적이 많다.</p>
+            <div class="tags">#원칙주의 #융통성제로 #FM</div>
+            <div class="work-label">본부 업무</div>
+            <ul><li>천도(薦度) 행정 — 망자·원혼 송치</li><li>업보 추심 — 능력 남용 채무 회수</li><li>요괴 단속·처분 / 사문 검거</li><li>결계 위반 수사</li></ul>
+          </div>
+        </div>
+        <div class="sunbae-bar" onclick="toggleSunbae(this,'s1')">
+          <span><span class="lbl">사수</span> <span class="nm">안현재</span></span><span class="chev">▼</span>
+        </div>
+        <div class="sunbae-detail" id="s1"><div class="inner">
+          <h5>안현재 — 끼인 중간관리</h5><div class="role">DIRECT SUPERVISOR</div>
+          <p>FM 본부장 밑에서 끼인 실무자. 유능한데 늘 피곤하고 가끔 다크서클이 비친다. 빡세게 굴려도 챙길 건 챙긴다.</p>
+          <div class="tags">#번아웃 #다크서클 #츤데레</div>
+        </div></div>
+      </div>
+
+      <!-- 운상 -->
+      <div class="div-col">
+        <div class="node div-head" onclick="toggleDiv(this,'d2')">
+          <span class="ic">☁</span>
+          <div class="nt">운상본부</div>
+          <div class="lead">本部長 · <span class="ko">천유화</span></div>
+        </div>
+        <div class="div-detail" id="d2">
+          <div class="inner">
+            <h4>천유화 — 능글 장사꾼</h4>
+            <div class="role">DIVISION HEAD · 운상본부장</div>
+            <p>비약·기 에너지를 독점한 돈줄. 미소 뒤에 계산기. 누구든 거래 상대로 본다. 사람 다루는 데 능수능란.</p>
+            <div class="tags">#능글 #이권 #미소뒤계산</div>
+            <div class="work-label">본부 업무</div>
+            <ul><li>비약 제조 — 영약·의약·독약</li><li>기(氣) 에너지 정제·송전</li><li>날씨·기상 관리 용역</li><li>단약 인증 / 사문산 짝퉁 단속</li></ul>
+          </div>
+        </div>
+        <div class="sunbae-bar" onclick="toggleSunbae(this,'s2')">
+          <span><span class="lbl">사수</span> <span class="nm">정도운</span></span><span class="chev">▼</span>
+        </div>
+        <div class="sunbae-detail" id="s2"><div class="inner">
+          <h5>정도운 — FM 범생이</h5><div class="role">DIRECT SUPERVISOR</div>
+          <p>원칙대로만 가는 모범생 실무자. 능글맞은 본부장과 사사건건 안 맞아 늘 불편해한다. 진지하고 정석.</p>
+          <div class="tags">#범생이 #원칙주의 #불편케미</div>
+        </div></div>
+      </div>
+
+      <!-- 가람 -->
+      <div class="div-col">
+        <div class="node div-head" onclick="toggleDiv(this,'d3')">
+          <span class="ic">📡</span>
+          <div class="nt">가람본부</div>
+          <div class="lead">本部長 · <span class="ko">선우찬</span></div>
+        </div>
+        <div class="div-detail" id="d3">
+          <div class="inner">
+            <h4>선우찬 — 정보 쥔 인싸</h4>
+            <div class="role">DIVISION HEAD · 가람본부장</div>
+            <p>약점·소문을 다 쥔 마당발. 적도 친구도 아닌 모두의 정보원. 누가 사문 잠복파인지 아는 듯한데 입을 안 연다.</p>
+            <div class="tags">#정보독점 #양다리 #속내불명</div>
+            <div class="work-label">본부 업무</div>
+            <ul><li>디지털 부적 플랫폼 운영</li><li>은폐 공작 — 기억 처리·언론 통제</li><li>정보 수집 / 사문 첩보</li><li>능력자 신원·라이선스 DB 관리</li></ul>
+          </div>
+        </div>
+        <div class="sunbae-bar" onclick="toggleSunbae(this,'s3')">
+          <span><span class="lbl">사수</span> <span class="nm">양도하</span></span><span class="chev">▼</span>
+        </div>
+        <div class="sunbae-detail" id="s3"><div class="inner">
+          <h5>양도하 — 겉햇살 속현실</h5><div class="role">DIRECT SUPERVISOR</div>
+          <p>통통 튀고 활발한 분위기 메이커. 그런데 뒤돌면 "아 일하기 싫다…" 푸념하는 반전. 겉은 햇살, 속은 현실주의자.</p>
+          <div class="tags">#햇살캐 #하이텐션 #뒤에선푸념</div>
+        </div></div>
+      </div>
+
+      <!-- 관성 -->
+      <div class="div-col">
+        <div class="node div-head" onclick="toggleDiv(this,'d4')">
+          <span class="ic">🧭</span>
+          <div class="nt">관성본부</div>
+          <div class="lead">本部長 · <span class="ko">사공현</span></div>
+        </div>
+        <div class="div-detail" id="d4">
+          <div class="inner">
+            <h4>사공현 — 감사실의 칼</h4>
+            <div class="role">DIVISION HEAD · 관성본부장</div>
+            <p>성 '사공(司空)'은 공역을 관장 — 결계시공·감사 직결. 운을 읽고 수를 둔다. 4본부를 다 감사하는 입장이라 모두가 어려워한다. 차갑고 정확.</p>
+            <div class="tags">#감사 #전략가 #껄끄러움</div>
+            <div class="work-label">본부 업무</div>
+            <ul><li>결계 시공·유지보수</li><li>사주·풍수 기반 운세 금융</li><li>전략기획 / 4본부 감사</li><li>택일·입지 용역</li></ul>
+          </div>
+        </div>
+        <div class="sunbae-bar" onclick="toggleSunbae(this,'s4')">
+          <span><span class="lbl">사수</span> <span class="nm">임서우</span></span><span class="chev">▼</span>
+        </div>
+        <div class="sunbae-detail" id="s4"><div class="inner">
+          <h5>임서우 — 고분고분 순둥</h5><div class="role">DIRECT SUPERVISOR</div>
+          <p>시키는 대로 군말 없이 해내는 성실한 실무자. 까칠한 본부장 밑인데도 무탈하게 잘 굴러간다. 편한 상대.</p>
+          <div class="tags">#고분고분 #순둥 #무난케미</div>
+        </div></div>
+      </div>
+
+      <!-- 공통관리 -->
+      <div class="div-col">
+        <div class="node div-head" onclick="toggleDiv(this,'d5')">
+          <span class="ic">🗂</span>
+          <div class="nt">공통관리본부</div>
+          <div class="lead" style="color:var(--ink-faint)">학부 무관 · 관리부문</div>
+        </div>
+        <div class="div-detail" id="d5">
+          <div class="inner">
+            <h4>공통관리본부</h4>
+            <div class="role">GENERAL AFFAIRS</div>
+            <p>인사·총무·경리 등 관리부문. 사옥에서 가장 평범한 '회사'. 형광등·파티션·복합기의 세계.</p>
+            <div class="tags">#관리부문 #사내정치</div>
+            <div class="work-label">소속</div>
+            <ul><li>인사 / 총무 / 경리</li><li>발령·라이선스 행정</li><li>그리고 — 4층</li></ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /div-row -->
+
+    <!-- SAMUN -->
+    <div class="samun-wrap">
+      <div class="samun-head"><span class="hz">邪門</span><span class="en">SAMUN · UNLICENSED SYNDICATE</span></div>
+      <p class="samun-desc">면허(=업보 통제)를 거부하고 협약 바깥에 사는 비인가 결사. 폐지된 흑무계 잔당이 흘러든 곳. 무허가 영업·능력자 사채시장으로, 갈 곳 없는 저등급 졸업생을 빨아들인다. 부서가 아니라 노선(派)으로 갈린다.</p>
+      <div class="samun-row">
+        <div class="samun-card">
+          <h4>탐랑 (貪狼)</h4>
+          <div class="role">강경파 · 행동대장 · 불도저</div>
+          <p>결계를 부수고 봉인 뜯는 행동대 선봉. 선빵필승 마인드. 화끈하고 거침없다.</p>
+          <div class="tags">#강경파 #행동대장 #불도저 #선빵</div>
+        </div>
+        <div class="samun-card">
+          <h4>흑연 (黑緣)</h4>
+          <div class="role">잠복파 · 천재 흑술사</div>
+          <p>은비고 폐지된 흑무계의 그 천재. 학교 그림자에 숨어 살던 자가, 이젠 공사·사회에 위장 침투해 포섭·정보를 다룬다. 누가 흑연인지, 어디까지 들어와 있는지 아무도 모른다.</p>
+          <div class="tags">#흑무계출신 #잠복파 #위장침투 #정체불명 #메인떡밥</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== HEADQUARTERS ===================== -->
+<section id="hq">
+  <div class="wrap">
+    <div class="kicker">Headquarters · 사옥 안내</div>
+    <h2 class="sec-title">본사 사옥</h2>
+    <p class="sec-sub">층을 클릭하면 상세 정보가 표시됩니다. 위로 갈수록 천상(天), 아래로 갈수록 저승(冥).</p>
+
+    <div class="hq-layout">
+      <div>
+        <div class="building" id="building"><!-- floors injected --></div>
+        <div class="hq-scale"><span>↑ 天 · 천상</span><span>저승 · 冥 ↓</span></div>
+      </div>
+      <div class="hq-panel" id="hqPanel">
+        <div class="pno">SELECT FLOOR</div>
+        <h3>층을 선택하세요</h3>
+        <div class="zone">대한건곤공사 본사</div>
+        <p>일반인 눈엔 평범한 지주회사 빌딩. 가람본부 은폐결계로 능력자만 진짜 내부를 본다. 수직 동선 그 자체가 격(格)의 사다리다.</p>
+        <p class="hint">왼쪽 단면도에서 층을 눌러보세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RECRUIT / WELFARE ===================== -->
+<section id="welfare">
+  <div class="wrap">
+    <div class="kicker">Recruit · 인재·복지</div>
+    <h2 class="sec-title">인재·복지</h2>
+    <p class="sec-sub">면허 취득은 곧 의무 임용. 검증된 등급이 곧 직급이 됩니다.</p>
+
+    <div class="rc-grid">
+      <div class="rc-box">
+        <span class="tag">PROBATION · 修習</span>
+        <h3>3개월 수습 제도</h3>
+        <p>신입은 <b>행자(行者)</b> 신분으로 시작합니다. 수습 행자는 정식 라이선스가 아닌 임시 면허라 사용 가능한 술법이 제한됩니다. 3개월 뒤 첫 심사로 정식 술사(術士) 전환 — 통과하지 못하면 발령 취소 또는 저등급 재배치됩니다.</p>
+        <div class="ladder">
+          <span class="step">수습 행자<br>行者</span><span class="arr">→</span>
+          <span class="step">정식 술사<br>術士</span><span class="arr">→</span>
+          <span class="step">책임 도사·판관<br>道師·判官</span><span class="arr">→</span>
+          <span class="step">상임 선관<br>仙官</span><span class="arr">→</span>
+          <span class="step top">신격 이사회<br>神</span>
+        </div>
+      </div>
+      <div class="rc-box">
+        <span class="tag">ASSIGNMENT · 發令</span>
+        <h3>발령 시스템</h3>
+        <p>추분 심도식(審度式)의 업보 등급이 그대로 입사 직급과 발령 본부를 결정합니다. 업보를 잘 관리한 졸업생은 고등급 라이선스로 핵심 부서에 발령되며 강한 술법 사용을 허가받습니다. 업보 폭주 이력은 저등급·말단 발령으로 이어집니다.</p>
+      </div>
+    </div>
+
+    <div class="subhead">대한건곤공사 입사자들을 위한 복지 정책 <span class="hz">WELFARE</span></div>
+
+    <div class="subhead" style="font-size:12px;margin-top:8px">오행보험 <span class="hz">五行 보험 · OHAENG INSURANCE</span></div>
+    <div class="ohaeng">
+      <div class="oh-card"><div class="el">木</div><div class="nm">건강</div><div class="ds">기본 건강보장</div></div>
+      <div class="oh-card"><div class="el">火</div><div class="nm">요괴상해</div><div class="ds">현장 요괴 피해</div></div>
+      <div class="oh-card"><div class="el">土</div><div class="nm">결계과실</div><div class="ds">결계 시공·운용 과실</div></div>
+      <div class="oh-card"><div class="el">金</div><div class="nm">업보</div><div class="ds">업보 누적 관리</div></div>
+      <div class="oh-card"><div class="el">水</div><div class="nm">산재</div><div class="ds">빙의·저주 포함</div></div>
+    </div>
+
+    <div class="subhead" style="font-size:12px">그 외 복지 <span class="hz">BENEFITS</span></div>
+    <div class="bn-list">
+      <div class="bn"><div class="bn-t">사택 제공</div><div class="bn-d">결계 두른 사원아파트. 월세 저렴, 출입기록만 남음.</div></div>
+      <div class="bn"><div class="bn-t">사내 비약 처방</div><div class="bn-d">운상 직원할인. 영양제부터 응급 영약까지.</div></div>
+      <div class="bn"><div class="bn-t">업보 정화휴가</div><div class="bn-d">업보 등급 관리용 유급휴가. 단, 안 쓰면 등급이 깎임.</div></div>
+      <div class="bn"><div class="bn-t">경조사 지원</div><div class="bn-d">인간 경조 + 신격식 경조(승급=격 상승 의례).</div></div>
+      <div class="bn"><div class="bn-t">사후보장연금</div><div class="bn-d">야근과 격무로 이승에서 다 쓰지 못한 급여를 사후 명부(저승) 계좌로 자동 이체하여 영혼의 노후를 보장하는 대한건곤공사만의 특화 복지입니다.</div></div>
+      <div class="bn"><div class="bn-t">영혼 초과근무 수당 <span style="font-size:9px;color:var(--ink-faint)">(명부 한정)</span></div><div class="bn-d">야간 천도·출동 특근비. 액수는 센데 아무도 안 부러워함.</div></div>
+    </div>
+
+    <div class="subhead">B1 복지층 <span class="hz">WELFARE FLOOR · 사옥에서 유일하게 사람 사는 냄새 나는 층</span></div>
+    <div class="fac-grid">
+      <div class="fac"><h4>명실 <span class="hz">茗室</span></h4><div class="cat">사내 카페</div><p>겉은 평범한 카페. 아메리카노·라떼가 인기메뉴. 메뉴판 아래쪽엔 쌍화탕 라떼·공진단 샷 추가·숙취해소 비약 에이드가 섞여 있다. 야근러 필수템.</p></div>
+      <div class="fac"><h4>활인서 분점 <span class="hz">活人署</span></h4><div class="cat">사내 의무실</div><p>운상본부가 관리하는 활인서. 사내 의무실로, 타박상·숙취·기 소진을 즉시 처치. 단골은 명부본부.</p></div>
+      <div class="fac"><h4>만물상 <span class="hz">萬物商</span></h4><div class="cat">사내 편의점</div><p>임직원 전용 복지 편의시설. 현장 출동용 부적 및 간이 결계 스티커(사무 자재류), 일반 가공식품 및 일용잡화류 판매. 취급 재고가 매일 상이하게 변동됨.</p></div>
+      <div class="fac"><h4>온돌 휴게실</h4><div class="cat">휴게 공간</div><p>좌식 안마의자 + 온돌 바닥. 점심시간엔 수면실. 살짝 칙칙한 조명이 오히려 잠이 잘 온다.</p></div>
+      <div class="fac"><h4>목욕재계실 <span class="hz">沐浴齋戒室</span></h4><div class="cat">정화 · 노천탕</div><p>부정(不淨) 타거나 시체 기운 묻은 직원이 씻고 정화하는 곳. 명부본부 출동조 필수 코스. 신선 노천탕.</p></div>
+      <div class="fac"><h4>옥상정원</h4><div class="cat">운상본부 관할 · 사내정치의 결과물</div><p>이름은 옥상정원이지만 정작 옥상엔 없다. 원래 진짜 옥상에 펜트하우스급으로 지으려다 부서 간 예산 싸움과 사내 정치에서 밀려 애매한 저층부에 배정됐다. 빡친 운상본부 엘리트들이 오기로 기상제어 기술을 쏟아부어, 창문 하나 없는 아래층 천장에 완벽한 인공 하늘과 날씨를 구현해놨다. 가끔 운상본부장 기분이 안 좋으면 실내 정원에 벼락이 치거나 폭설이 내린다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTRANET BOARD ===================== -->
+<section id="board">
+  <div class="wrap">
+    <div class="kicker">Intranet · 사내게시판</div>
+    <h2 class="sec-title">사내게시판</h2>
+    <p class="sec-sub">글을 클릭하면 본문이 펼쳐집니다. 일부 게시물은 임직원 인증이 필요합니다.</p>
+    <div class="board-note">사내망 연결됨 · 익명 게시판은 작성자가 표시되지 않습니다</div>
+
+    <!-- 공지 -->
+    <div class="board-block">
+      <div class="bh">공지사항 <span class="cnt">NOTICE</span></div>
+      <div class="post notice"><div class="post-head"><span class="ptag">총무</span><span class="ptitle">B1 명실 정수기 교체 안내 (6/2~)</span><span class="pmeta">5/29</span></div></div>
+      <div class="post notice"><div class="post-head"><span class="ptag">인사</span><span class="ptitle">2분기 업보 정화휴가 미사용자 안내 — 기한 내 소진 요망</span><span class="pmeta">5/28</span></div></div>
+      <div class="post notice"><div class="post-head"><span class="ptag">총무</span><span class="ptitle">송년… 아 아직 5월이지 죄송합니다 (작성 취소)</span><span class="pmeta">5/27</span></div></div>
+    </div>
+
+    <!-- 익명: 이직/평판 -->
+    <div class="board-block">
+      <div class="bh">익명 게시판 <span class="cnt">ANONYMOUS</span></div>
+
+      <div class="post"><div class="post-head" onclick="togglePost(this)">
+        <span class="ptag">익명</span><span class="ptitle">다른 본부 이직 어떻게 생각함?</span><span class="pcmt">💬 7</span></div>
+        <div class="post-body"><div class="inner">
+          <div class="ptext">지금 OO본부 2년차인데 솔직히 여기 못 버티겠다. 다른 본부 이직 진지하게 고민 중인데 해본 사람 있음? 적응할 만함?</div>
+          <div class="cmt-label">댓글 7</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 어디 생각하는데? 본부마다 천국과 지옥 갈림 ㅋㅋ</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 운상 생각 중이면 가라. 거기 비약 냄새나서 그렇지 사람은 안 갈아넣음</div>
+          <div class="cmt"><span class="nest">ㄴ</span> ↑운상 다님? 우리는 사람을 안 가는 게 아니라 <b>살 사람만</b> 뽑아서 그럼 ^^</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 관성만 아니면 됨. 감사받다가 감사하는 입장 됐는데 동기들이 손절함</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 명부는 오지 마라 진짜. 야근수당 세긴 한데 그 돈 쓸 시간도 체력도 없음</div>
+          <div class="cmt"><span class="nest">ㄴ</span> <b>오지마....</b></div>
+          <div class="cmt"><span class="nest">ㄴ</span> ↑그 세 글자에 모든 게 담겨있네</div>
+        </div></div>
+      </div>
+
+      <div class="post"><div class="post-head" onclick="togglePost(this)">
+        <span class="ptag">익명</span><span class="ptitle">(제목 없음)</span><span class="pcmt">💬 3</span></div>
+        <div class="post-body"><div class="inner">
+          <div class="ptext">오지마....</div>
+          <div class="cmt-label">댓글 3</div>
+          <div class="cmt"><span class="nest">ㄴ</span> ㅋㅋㅋㅋㅋㅋ어느 본부세요</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 말 안 해도 알 것 같음</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 추천 7 <span class="vt">▲</span></div>
+        </div></div>
+      </div>
+
+      <div class="post"><div class="post-head" onclick="togglePost(this)">
+        <span class="ptag">익명</span><span class="ptitle">OO부서 이러지 맙시다 진짜</span><span class="pcmt">💬 6</span></div>
+        <div class="post-body"><div class="inner">
+          <div class="ptext">가람본부분들… 첩보 넘겨줄 때 좀 정리해서 주시면 안 됩니까. 현장 나가는 사람은 명부인데 데이터는 날것으로 던지고 공은 또 같이 먹으려 하시고. 이번 분기만 세 번째입니다.</div>
+          <div class="cmt-label">댓글 6</div>
+          <div class="cmt"><span class="nest">ㄴ</span> (가람) 정리까지 해드리면 그쪽 일은 뭐 합니까?</div>
+          <div class="cmt"><span class="nest">ㄴ</span> ↑이게 바로 그 마인드임 ^^ 캡처해둠</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 둘이 싸우는 동안 운상은 위에서 차 마시는 중</div>
+          <div class="cmt"><span class="nest">ㄴ</span> ↑운상 소환하지 마세요 비약값 청구서 날아옵니다</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 관성: 흥미롭네요. 양 본부 협업 프로세스 감사 항목에 추가하겠습니다 📋</div>
+          <div class="cmt"><span class="nest">ㄴ</span> ↑야 진짜 하지 마 농담이야 미안하다</div>
+        </div></div>
+      </div>
+
+      <div class="post"><div class="post-head" onclick="togglePost(this)">
+        <span class="ptag">익명</span><span class="ptitle">비용 처리 좀… (운상 vs 명부)</span><span class="pcmt">💬 4</span></div>
+        <div class="post-body"><div class="inner">
+          <div class="ptext">추심한 업보 정화하는 데 비약 쓰는 거 당연한 건데 왜 매번 우리한테 비용 떠넘기심? 위험한 현장은 우리가 다 뛰는데.</div>
+          <div class="cmt-label">댓글 4</div>
+          <div class="cmt"><span class="nest">ㄴ</span> (운상) 저희 비약이 공짜로 솟아나는 줄 아시나… 품의 올리세요 품의</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 매번 이걸로 싸우는데 그냥 위에서 예산 정리 좀 해주지</div>
+          <div class="cmt"><span class="nest">ㄴ</span> ↑위(이사회)는 이런 거 안 봄. 격(格)만 봄</div>
+          <div class="cmt"><span class="nest">ㄴ</span> 결론: 둘 다 4층한테 예산 뺏긴 거임 ^^… 어 잠깐 누가 이 댓글 썼</div>
+        </div></div>
+      </div>
+
+      <!-- 떡밥글 ① 잠금 -->
+      <div class="post locked"><div class="post-head" onclick="togglePost(this)">
+        <span class="ptag">🔒 LOCK</span><span class="ptitle">🔒 4층… 다녀온 사람 있음?</span><span class="pcmt">💬 9</span></div>
+        <div class="post-body"><div class="inner">
+          <!-- 잠금 게이트 -->
+          <div class="lock-gate" data-post="lock1">
+            <div class="inner">
+              <div class="lk-ic">🔒</div>
+              <div class="lk-msg">본 게시물은 대한건곤공사 임직원만 열람할 수 있습니다.</div>
+              <div class="lk-sub">사번 인증 후 열람 가능</div>
+              <div class="lock-form">
+                <input type="password" placeholder="사번 / 인증번호" id="pw_lock1" onkeydown="if(event.key==='Enter')tryUnlock('lock1')">
+                <button onclick="tryUnlock('lock1')">로그인</button>
+              </div>
+              <div class="lock-err" id="err_lock1"></div>
+            </div>
+          </div>
+          <!-- 잠금 해제 시 본문 -->
+          <div class="unlocked-body" id="body_lock1">
+            <div class="ptext">4층 발령 동기랑 연락이 끊겼다. 인사기록엔 '파견'으로만 떠 있고 부서 위치도 안 나옴. 사내 메신저도 비활성. 4층 다녀온 사람들은 하나같이 말을 아끼고, 물어보면 화제를 돌린다. 거기 진짜 뭐 하는 데냐? 아는 사람 있으면 익명으로라도 좀…</div>
+            <div class="cmt-label">댓글 9</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 나도 그 케이스 앎. '파견' 뜨고 나서 한 번도 못 봤음</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 솔직히 무섭다 이거… 사람이 그냥 기록만 남고 사라지는 거잖아</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 엘베에 4층 버튼 없는 거 다들 미신이라 했는데 진짜 이상한 거 맞지?</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 이 글도 곧 잠길 듯. 캡처해둬라</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 진짜 불안해서 잠이 안 옴. 나 다음 분기 인사이동 대상인데…</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 말 조심해라 여기 익명 아닌 거 같다</div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 떡밥글 ② 잠금 -->
+      <div class="post locked"><div class="post-head" onclick="togglePost(this)">
+        <span class="ptag">🔒 LOCK</span><span class="ptitle">🔒 사옥에서 퇴사한 사람을 봤다</span><span class="pcmt">💬 12</span></div>
+        <div class="post-body"><div class="inner">
+          <div class="lock-gate" data-post="lock2">
+            <div class="inner">
+              <div class="lk-ic">🔒</div>
+              <div class="lk-msg">본 게시물은 대한건곤공사 임직원만 열람할 수 있습니다.</div>
+              <div class="lk-sub">사번 인증 후 열람 가능</div>
+              <div class="lock-form">
+                <input type="password" placeholder="사번 / 인증번호" id="pw_lock2" onkeydown="if(event.key==='Enter')tryUnlock('lock2')">
+                <button onclick="tryUnlock('lock2')">로그인</button>
+              </div>
+              <div class="lock-err" id="err_lock2"></div>
+            </div>
+          </div>
+          <div class="unlocked-body" id="body_lock2">
+            <div class="ptext">사문이 조용한 게 아니라 — 안에 들어와 있는 것 같다. 얼마 전 사옥 복도에서 분명 작년에 퇴사 처리된 사람을 봤다. 그런데 멀쩡히 사원증을 달고 있었다. 눈이 마주쳤는데 웃더라. 흑무계 그 소문의 인물… 흑연 아니냐는 말이 돈다. 신고하려는데 어디에 해야 할지조차 모르겠다.</div>
+            <div class="cmt-label">댓글 12</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 소름… 나도 비슷한 거 봤음. 명단에 없는 얼굴이 회의실 들어가더라</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 사문이 조용한 이유가 이거였나. 밖에서 안 싸우고 안에 들어온 거</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 진짜 불안하다. 우리 중에 섞여 있을 수도 있다는 거잖아</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 가람본부는 알고 있을 텐데 왜 가만히 있냐</div>
+            <div class="cmt"><span class="nest">ㄴ</span> ↑말했잖아 입을 안 연다고</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 신고는 4층으로 하라던데… 거기로 가면 또 연락 끊기는 거 아님?</div>
+            <div class="cmt"><span class="nest">ㄴ</span> 이 스레드 위험하다. 다들 조심해</div>
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="fseal">大韓乾坤公社</div>
+  <div class="fmotto">보이지 않는 균형, 건곤이 맡습니다</div>
+  <div class="fnote">DAEHAN GEONGON PUBLIC CORPORATION · 神人協約 인가 · 임직원 인증 후 열람 가능</div>
+</footer>
+
+<script>
+/* ---- nav ---- */
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>menu.classList.toggle('mobile-open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('mobile-open')));
+
+/* ---- org: board ---- */
+function toggleBoard(el){el.classList.toggle('open');document.getElementById('gods').classList.toggle('show')}
+function toggleCeo(el){el.classList.toggle('open');document.getElementById('ceoDetail').classList.toggle('show')}
+function toggleDiv(el,id){
+  const d=document.getElementById(id);const wasOpen=d.classList.contains('show');
+  el.classList.toggle('open');d.classList.toggle('show');
+}
+function toggleSunbae(el,id){event.stopPropagation();el.classList.toggle('open');document.getElementById(id).classList.toggle('show')}
+
+/* ---- HQ building ---- */
+const floors=[
+ {no:'23F',nm:'천궁 天宮',lv:'lv10',zone:'BOARDROOM · 이사회',title:'천궁 (天宮)',
+  txt:'이사회실 — 신(오너)들의 공간. 평소 텅 비어 있다. 전용 엘리베이터 카드 없이는 진입 불가. 한 번 불이 켜지면 사옥 전체가 긴장한다.'},
+ {no:'22F',nm:'사장실·비서실',lv:'lv9',zone:'PRESIDENT · 권무진',title:'사장실 · 비서실',
+  txt:'대표이사 권무진의 집무 공간. 통유리 너머 야경이 펼쳐진다. 그런데 새벽에도 이 층의 불이 꺼진 적이 없다.'},
+ {no:'20–21F',nm:'운상본부',lv:'lv8',zone:'UNSANG · 雲上',title:'운상본부',
+  txt:'제약연구소·VIP 라운지. 雲上=구름 위라는 이름답게 고층 직결. 사옥에서 가장 쾌적하고 은은한 비약 냄새가 난다. 다른 본부가 제일 부러워하는 층.'},
+ {no:'17–19F',nm:'관성본부',lv:'lv7',zone:'GWANSEONG · 觀星',title:'관성본부',
+  txt:'전략·감사·결계관제실. 깔끔하고 조용하다. 감사실이 있어 이 층에서 호출이 뜨면 다들 식은땀을 흘린다.'},
+ {no:'9–16F',nm:'가람본부',lv:'lv6',zone:'GARAM · 가람',title:'가람본부',
+  txt:'IT·정보·대외·위장신분 발급. 콜센터와 서버실을 합친 텐션. 사옥에서 제일 시끄럽고 활기차다.'},
+ {no:'5–8F',nm:'공통관리본부',lv:'lv5',zone:'GENERAL AFFAIRS',title:'공통관리본부',
+  txt:'인사·총무·경리 등 관리부문. 사옥에서 가장 평범한 \'회사\'. 신규 임용자는 본부 배치에 앞서 이곳에서 3주간 공통 직무교육 및 조직 적응 과정을 이수하며, 수료 후 각 특수본부로 의무 발령된다.'},
+ {no:'4F',nm:'— — —',lv:'lv4',f4:true,zone:'NO DATA',title:'(4F)',
+  txt:'해당 층 정보 없음.',locked:true},
+ {no:'2–3F',nm:'대회의실·교육실',lv:'lv3',zone:'TRAINING',title:'대회의실 · 교육실 · 발령대기실',
+  txt:'신입이 처음 오는 곳. 입사 교육과 발령 대기가 이뤄진다.'},
+ {no:'1F',nm:'로비',lv:'lv2',zone:'LOBBY',title:'1F 로비',
+  txt:'일반인에겐 평범한 로비. 능력자 눈엔 결계 천지다. 안내데스크엔 신수(神獸)가 위장근무 중.'},
+ {no:'B1',nm:'복지층',lv:'lv1',zone:'WELFARE',title:'B1 복지층',
+  txt:'명실(카페)·활인서·만물상·온돌 휴게실·목욕재계실·옥상정원. 사옥에서 유일하게 사람 사는 냄새가 나는 층.'},
+ {no:'B2–B3',nm:'명부집행본부',lv:'lv0',zone:'MYEONGBU · 冥府',title:'명부집행본부',
+  txt:'집행·추심·구류. 저승 모티프. 햇빛 0, 상시 한기. 원혼 구류 유치장과 현장출동 차고가 있다. 사옥에서 가장 삭막한 구역.'},
+];
+const bd=document.getElementById('building');
+floors.forEach((f,i)=>{
+  const div=document.createElement('div');
+  div.className='floor '+f.lv+(f.f4?' f4':'');
+  div.innerHTML=`<span class="fl-no">${f.no}</span><span class="fl-nm">${f.nm}</span>`;
+  div.onclick=()=>selectFloor(i,div);
+  bd.appendChild(div);
+});
+function selectFloor(i,div){
+  const f=floors[i],p=document.getElementById('hqPanel');
+  document.querySelectorAll('.floor').forEach(x=>x.classList.remove('active'));
+  div.classList.add('active');
+  if(f.locked){
+    p.className='hq-panel locked';
+    p.innerHTML=`<div class="pno">4F</div><h3>해당 층 정보 없음</h3><div class="zone">NO DATA</div><p>요청하신 층의 정보를 찾을 수 없습니다. 엘리베이터 안내 패널을 확인해 주십시오.</p><p class="hint">※ 본 건물에 4층은 등록되어 있지 않습니다.</p>`;
+    return;
+  }
+  p.className='hq-panel';
+  p.innerHTML=`<div class="pno">${f.no}</div><h3>${f.title}</h3><div class="zone">${f.zone}</div><p>${f.txt}</p>`;
+}
+
+/* ---- board posts ---- */
+function togglePost(head){
+  const body=head.parentElement.querySelector('.post-body');
+  body.classList.toggle('show');
+}
+
+/* ---- lock / login ---- */
+const PASS='ridal0512'; /* ← 비밀번호. 바꾸려면 이 따옴표 안만 수정하세요 */
+function tryUnlock(id){
+  const v=document.getElementById('pw_'+id).value.trim();
+  const err=document.getElementById('err_'+id);
+  if(v===PASS){
+    document.querySelector('.lock-gate[data-post="'+id+'"]').style.display='none';
+    document.getElementById('body_'+id).classList.add('show');
+  }else{
+    err.textContent='인증 실패 — 열람 권한이 없습니다.';
+    const inp=document.getElementById('pw_'+id);
+    inp.value='';inp.focus();
+  }
+}
+</script>
+</body>
+</html>
